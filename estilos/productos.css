@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&family=Rubik+Distressed&display=swap');
+body{
+    background-color: #E6E5A3;
+    font-family: 'Nunito Sans', sans-serif;
+    user-select: none;
+    position: relative;
+}
+/*El siguiente pseudoelemento  es para crear un pie de pagina*/
+body::after{
+
+    position: absolute;
+    content: "Examen Cliente 2º DAW Carlota Menéndez";
+    background-color: #496148;
+    font-size: 2em;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    color: white;
+    padding-top: 15px;
+    text-shadow: 0.1em 0.1em 0.2em black; 
+}
+body::before{
+    position:absolute;
+    content: "";
+    border-top: 20px solid rgba(255, 0, 0, 0);
+    border-bottom: 20px solid #496148;
+    border-right: 20px solid rgba(255, 255, 0, 0);
+    border-left: 20px solid rgba(255, 192, 203, 0);
+    bottom: -30px;
+    right: 700px;
+}
+
+/*Encabezado*/
+header{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12vh;
+    background-color: #A9AF7E;
+    border-bottom: 5px solid #557153;
+}
+h1{
+    font-size: 3.5em;
+    text-transform: capitalize;
+    letter-spacing: 5px;
+    color: #E6E5A3;
+    font-family: 'Rubik Distressed', cursive;
+    text-shadow: 0.1em 0.1em 0.2em black;   
+}
+
+section{
+    display: flex;
+    flex-direction: row;
+    margin: 30px;
+    gap: 50px;
+    justify-content: space-around;
+   
+}
+/*Serán los tamaños para los div hijos de section*/
+.contenedorIzquierdo{
+    width: 60vw;
+}
+.contenedorDerecho{
+    width: 10vw;
+}
+
+/*Dentro del div contenedorIzquierdo, habrá varios hijos, que serán article*/
+article{
+
+    height: 20vh;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 20px;
+    border-bottom: 2px solid orange;
+    min-width: 500px;
+    
+}
+article img{
+    height: 180px;
+    margin-bottom: 20px;
+    box-shadow: 10px 10px 11px 0px rgba(0,0,0,0.75);
+}
+/* Será el contenedor del lado derecho de la imagen, el cual contendra un h3 un parrafo y un div, botonera, la cual contendrá los botones*/
+.contenedorContenido{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.contenedorContenido h3{
+    font-size: 1.4em;
+    width: 97%;
+    color: #557153;
+    border-bottom: 1px dashed #557153;
+}
+/*Cambiara la primera letra del h3*/
+.contenedorContenido h3::first-letter{
+   text-transform: capitalize;
+}
+/*Estilos para la botonera, la cual sera un div y contendrá los botoenes*/
+.botonera{
+    width: 30vw;
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1;
+}
+button{
+    width: 130px;
+    height: 20px;
+    cursor: pointer;
+    background-color: #7D8F69;
+    border: .5px solid black;
+}
+button:hover{
+    background-color: #557153;
+    color: #E6E5A3;
+}
+
+
+/*Estilos contenedor derecho*/
+.contenedorDerecho{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    gap: 20px;
+
+}
+/*El posicionamiento será necesario para la creación de los pseudoelementos*/
+.contenedorContenidoDerecho{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #A9AF7E;
+    gap: 5px;
+    position: relative;
+
+}
+/*Pseudoelemento (Triangulo que aparece en el contenedor 2)*/
+.contenedorContenidoDerecho::after{
+    position: absolute;
+    content: "";
+    display: block;
+    top: 18px;
+    left: -40px;
+    border-bottom: 20px solid rgba(255, 0, 0, 0);
+    border-top: 20px solid rgba(0, 128, 0, 0);
+    border-right: 20px solid #A9AF7E;
+    border-left: 20px solid rgba(255, 192, 203, 0);
+}
+.contenedorContenidoDerecho h2{
+    padding: 10px;
+    border-bottom: 1px dashed #557153;
+    color: #496148;
+    font-size: 1.4em;
+
+}
+/* Esto será el contenido de dentro del contenedor derehco divA divB*/
+.contenidoDerecho{
+    
+    padding-left: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+/*Cambio la primera letra del h2*/
+.contenedorDerecho :nth-child(2)::first-letter{
+
+    text-transform: uppercase;
+    font-size: 1.1em;
+}
+.contenedorContenidoDerecho img{
+    height: 70px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 6px -4px 23px 0px rgba(0,0,0,0.75);
+}
+
+/*Es el contenido del contenedor, es decir lo que incluye la imagen y el texto*/
+.contContenido{
+    display: flex;
+    flex-direction: column;
+    color: #496148;
+    gap: 8px;
+    /* font-size: 1em; */
+    text-decoration: underline;
+}
+
+
+
+/*Media Queries*/
+
+@media screen and (max-width:900px){
+    /*Convierto el flex de section a columna, para que el contenedor derecho salga abajo del todo*/
+    section{
+        flex-direction: column;
+    }
+    /*Estilos para el contenido del contenedor derecho*/
+    .contenedorDerecho{
+        flex-direction: row;
+        width: 600px;
+    }
+    .contenedorDerecho .contContenido{
+        padding-right: 10px;
+    }
+    /*Cabmio la posicion del pseudoelemento*/
+    .contenedorContenidoDerecho::after{
+        transform: rotate(90deg);
+        top: -40px;
+        left: 50px;
+    }
+
+}
