@@ -2,7 +2,7 @@
 body{
     background-color: #E6E5A3;
     font-family: 'Nunito Sans', sans-serif;
-    user-select: none;
+    /* user-select: none; */
     position: relative;
 }
 /*El siguiente pseudoelemento  es para crear un pie de pagina*/
